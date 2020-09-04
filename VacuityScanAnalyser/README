@@ -1,0 +1,5 @@
+To start the analyzer :
+
+./vacuityScanAnalyzer.py
+or
+./vacuityScanAnalyzer.py -i ScanVacuity.txt

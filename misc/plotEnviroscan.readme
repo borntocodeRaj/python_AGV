@@ -1,0 +1,13 @@
+Le script Python plotEnviroscan.py permet de visualiser les scans effectués par l'enviroscan. Ils sont enregistrés dans les fichiers clusters quand le niveau de Debug est égal à 6.
+
+Ce script se trouve dans le répertoire ~/ba_scripts/python/misc. Si votre PATH est bien configuré, il suffit de lancer plotEnviroscan depuis le répertoire contenant les fichiers clusters.
+
+Il suffit d'utiliser le slider en bas du graph pour afficher les différents clusters.
+Les boutons en bas à gauche permettent de zoomer, naviguer dans les vues, etc...
+
+Le script plotEnviroscan.py est configuré pour lire les scans de Vichy. Il suffit de modifier les variables 'fileBackground', 'fileROI' (première partie du nom) et les paramètres de 'plotEnviroscan()' (dernière partie) pour l'adapter à d'autres nommages de fichiers clusters.
+
+Le script plotFapro.py est configuré pour lire les scans de Faprogi.
+
+
+

@@ -1,0 +1,227 @@
+#Liste des dyfonctionnement soft AGV
+#dysfontionnements simples : (m_dysfSimpleList)
+# !!! ATTENTION : NE PAS SUPPRIMER LE COMMENTAIRE SUIVANT !!! 
+#IdStr 	Level 	Decription 	Resolution 	Famille 	Type(arretTraction,arretOutil,signalisation,rearmable,depannage) 
+"dysf.CanCoupleur.driver"	"PANNE"	"erreur chargement driver CAN"	"Verifier le bus CAN et les peripheriques connectes"	"INTRINSEQUE"	111110
+"dysf.AgentCan.memory"	"PANNE"	"Erreur Acces memoire CAN"	"Verifier le fonctionnement du STACK-104"	"INTRINSEQUE"	111100
+"dysf.AgentCan.modeRestreint"	"PANNE"	"Mode restreint du CAN non possible"	"Repasser l'agv en mode maintenance"	"INTRINSEQUE"	111100
+"CodeurTractionAv.dysf.vitesse"	"FAUTE"	"Codeur Traction avant:Vitesse codeur trop importante"	"Verifier le fonctionnement du codeur et le variateur associe"	"INTRINSEQUE"	111110
+"MultiReperage.dysfChangementStatut1"	"WARNING"	"Echec changement de reperage, sur le precedent (magnet ou cible laser)"	"Verifier le systeme de reperage precedent (magnet ou cible laser)"	"INTRINSEQUE"	001100
+"MultiReperage.dysfChangementStatut2"	"WARNING"	"Echec changement de reperage, sur le suivant (magnet ou cible laser)"	"Verifier le systeme de reperage suivant (magnet ou cible laser)"	"INTRINSEQUE"	001100
+"MultiReperage.dysfChangementContinuite"	"WARNING"	"Informations de reperage non concordantes lors du changement de reperage (laser, magnet)"	"Verifier les systemes de reperage (laser, magnet)"	"INTRINSEQUE"	001100
+"MultiReperage.dysfMultiReperage"	"FAUTE"	"Systeme de reperage incoherent"	"Reinitialiser l'AGV"	"INTRINSEQUE"	111100
+"MultiReperage.dysfInitReperage"	"FAUTE"	"Echec Initialisation reperage"	"Reinitialiser l'AGV"	"TRAJET"	111100
+"ReperageIml.warning"	"WARNING"	"ReperageIml, l'AGV ralentit a cause d'une absence de mesure"	"verifier le capteur et le support de guidage"	"TRAJET"	000000
+"ReperageIml.erreur"	"FAUTE"	"ReperageIml, l'AGV s'arrete a cause d'une absence de mesure"	"verifier le capteur et le support de guidage"	"TRAJET"	101100
+"Dysf.discontinuite.iml"	"FAUTE"	"Position IML discontinue"	"Initialiser l'AGV."	"TRAJET"	111100
+"Dysf.Dial.TimeOut"	"FAUTE"	"Pas de communication avec System AGV Manager"	"Verifier la liaison Wifi entre PC supervision et l'AGV"	"INTERFACE"	001000
+"Dysf.Spv.NonOp"	"WARNING"	"Erreur AGV detectee par la supervision"	"consulter l'onglet information"	"INTRINSEQUE"	001110
+"Dysf.Spv.InitKO"	"WARNING"	"Initialisation de l'AGV refusee par la supervision"	"consulter l'onglet information"	"INTRINSEQUE"	001110
+"Dysf.Batterie.CourantNul"	"PANNE"	"mesure du courant batterie incorrecte"	"Verifier le capteur de mesure de courant"	"INTRINSEQUE"	111100
+"Dysf.Batterie.TensionNulle"	"PANNE"	"tension batterie mesuree nulle"	"Verifier le capteur de mesure de tension"	"INTRINSEQUE"	111100
+"Dysf.Batterie.UnderVoltage"	"WARNING"	"Chute de tension batterie detectee"	"Verifier la tension batterie, ainsi que le niveau de charge de la batterie"	"INTRINSEQUE"	001100
+"Dysf.Batterie.SevereUnderVoltage"	"WARNING"	"Forte chute de tension batterie detectee"	"Verifier la tension batterie, ainsi que le niveau de charge de la batterie"	"INTRINSEQUE"	001100
+"Dysf.Batterie.CriticalUnderVoltage"	"FAUTE"	"Chute de tension CRITIQUE batterie !!"	"Verifier la tension batterie, ainsi que le niveau de charge de la batterie"	"INTRINSEQUE"	111110
+"Dysf.Batterie.OverVoltage"	"WARNING"	"Surtension batterie detectee"	"Verifier la tension batterie, ainsi que le niveau de charge de la batterie"	"INTRINSEQUE"	001100
+"Dysf.Batterie.SevereOverVoltage"	"WARNING"	"Forte surtension batterie detectee"	"Verifier la tension batterie, ainsi que le niveau de charge de la batterie"	"INTRINSEQUE"	001100
+"Dysf.Batterie.CriticalOverVoltage"	"ERREUR"	"Surtension CRITIQUE batterie detectee !!"	"Verifier la tension batterie, ainsi que le niveau de charge de la batterie"	"INTRINSEQUE"	111110
+"Dysf.Batterie.OverCurrent"	"ERREUR"	"Sur-intensite batterie detectee"	"Verifier le courant batterie, ainsi que le niveau de charge de la batterie"	"INTRINSEQUE"	001100
+"Dysf.Batterie.SevereOverCurrent"	"WARNING"	"Forte sur-intensite batterie detectee"	"Verifier le courant batterie, ainsi que le niveau de charge de la batterie"	"INTRINSEQUE"	001100
+"Dysf.Batterie.CriticalOverCurrent"	"FAUTE"	"Sur-intensite CRITIQUE batterie detectee !!"	"Verifier le courant batterie, ainsi que le niveau de charge de la batterie"	"INTRINSEQUE"	111110
+"Dysf.Batterie.SousCapacite"	"WARNING"	"capacite batterie tres faible"	"Verifier/Charger la batterie"	"INTRINSEQUE"	000100
+"Dysf.Batterie.CapaciteBasseXFC"	"WARNING"	"capacite batterie basse (< 60 %)"	"Verifier/Charger la batterie"	"INTRINSEQUE"	000100
+"Dysf.Batterie.NotEnoughCharged"	"WARNING"	"Batterie insuffisamment chargee"	"Verifier/Charger la batterie"	"INTRINSEQUE"	000110
+"Dysf.Batterie.UnplannedChange"	"WARNING"	"Changement batterie hors programmation"	"Attendre le prochain changement de batterie programme"	"INTRINSEQUE"	000100
+"Dysf.ChangeBatterieManuel"	"ERREUR"	"Changement batterie manuel effectue"	"Acquitter le message lors de la remise en mode automatique"	"INTRINSEQUE"	111000
+"Charge.dysf.chargeBatterie"	"ERREUR"	"defaut charge batterie"	"Verifier le fonctionnement du chargeur"	"INTERFACE"	000100
+"Charge.dysf.timeOut"	"ERREUR"	"defaut charge batterie : temps max alloue depasse"	"Verifier le fonctionnement du chargeur "	"INTERFACE"	000100
+"VariateurTractionAv.dysf.var.erreur"	"ERREUR"	"Variateur Traction Av:Defaut temporaire sur le variateur"	"Verifier le variateur.Verifier l'absence de blocage mecanique"	"INTRINSEQUE"	111110
+"VariateurTractionAv.dysf.var.panne"	"PANNE"	"Variateur Traction Av:Defaut permanent sur le variateur"	"Verifier le variateur.Verifier l'absence de blocage mecanique"	"INTRINSEQUE"	111100
+"TractionAv.dysf.depl.faute"	"FAUTE"	"Traction Av:Absence de mouvement"	"Verifier l'absence de blocage mecanique"	"INTRINSEQUE"	111110
+"TractionAv.dysf.depl.panne"	"PANNE"	"Traction Av:Absence prolongee de mouvement"	"Verifier l'absence de blocage mecanique"	"INTRINSEQUE"	111110
+"TractionAv.dysf.sens"	"ERREUR"	"Traction Av:Sens de deplacement incoherent"	"Verifier tous les organes du mouvement (variateur, codeurs...)"	"INTRINSEQUE"	111110
+"TractionAv.dysf.variateur"	"PANNE"	"Traction Av:Probleme avec le variateur associe"	"Verifier le fonctionnement du variateur concerne"	"INTRINSEQUE"	111100
+"TractionAv.dysf.survitesse"	"FAUTE"	"Traction Av:Vitesse mesuree du mouvement trop importante"	"Verifier le variateur et le codeur de deplacement associe"	"INTRINSEQUE"	111110
+"VariateurDirectionAv.dysf.var.erreur"	"ERREUR"	"Variateur Direction Av:Defaut temporaire sur le variateur"	"Verifier le variateur.Verifier l'absence de blocage mecanique"	"INTRINSEQUE"	111110
+"VariateurDirectionAv.dysf.var.panne"	"PANNE"	"Variateur Direction Av:Defaut permanent sur le variateur"	"Verifier le variateur.Verifier l'absence de blocage mecanique"	"INTRINSEQUE"	111100
+"DirectionAv.dysf.depl.faute"	"FAUTE"	"Direction Av:Absence de mouvement"	"Verifier l'absence de blocage mecanique"	"INTRINSEQUE"	111110
+"DirectionAv.dysf.depl.panne"	"PANNE"	"Direction Av:Absence prolongee de mouvement"	"Verifier l'absence de blocage mecanique"	"INTRINSEQUE"	111110
+"DirectionAv.dysf.sens"	"ERREUR"	"Direction Av:Sens de deplacement incoherent"	"Verifier tous les organes du mouvement (variateur, codeurs...)"	"INTRINSEQUE"	111110
+"DirectionAv.dysf.variateur"	"PANNE"	"Direction Av:Probleme avec le variateur associe"	"Verifier le fonctionnement du variateur concerne"	"INTRINSEQUE"	111100
+"DirectionAv.dysf.survitesse"	"FAUTE"	"Direction Av:Vitesse mesuree du mouvement trop importante"	"Verifier le variateur et le codeur de deplacement associe"	"INTRINSEQUE"	111110
+"DirectionAv.dysf.ButeePositive"	"WARNING"	"DirectionAv : actionneur en butee dans un des 2 sens (positif)"	"Verifier la commande de position associee"	"INTRINSEQUE"	001110
+"DirectionAv.dysf.ButeeNegative"	"WARNING"	"DirectionAv : actionneur en butee dans un des 2 sens (negatif)"	"Verifier la commande de position associee"	"INTRINSEQUE"	001110
+"VariateurMvtLevage.dysf.var.erreur"	"ERREUR"	"Variateur Levage:Defaut temporaire sur le variateur"	"Verifier le variateur.Verifier l'absence de blocage mecanique"	"INTRINSEQUE"	111110
+"VariateurMvtLevage.dysf.var.panne"	"PANNE"	"Variateur Levage:Defaut permanent sur le variateur"	"Verifier le variateur.Verifier l'absence de blocage mecanique"	"INTRINSEQUE"	111100
+"MvtLevage.dysf.depl.faute"	"FAUTE"	"MvtLevage:Absence de mouvement"	"Verifier l'absence de blocage mecanique"	"INTRINSEQUE"	111110
+"MvtLevage.dysf.depl.panne"	"PANNE"	"MvtLevage:Absence prolongee de mouvement"	"Verifier l'absence de blocage mecanique"	"INTRINSEQUE"	111110
+"MvtLevage.dysf.sens"	"ERREUR"	"MvtLevage:Sens de deplacement incoherent"	"Verifier tous les organes du mouvement (variateur, codeurs...)"	"INTRINSEQUE"	111110
+"MvtLevage.dysf.variateur"	"PANNE"	"MvtLevage:Probleme avec le variateur associe"	"Verifier le fonctionnement du variateur concerne"	"INTRINSEQUE"	111100
+"MvtLevage.dysf.survitesse"	"FAUTE"	"MvtLevage:Vitesse mesuree du mouvement trop importante"	"Verifier le variateur et le codeur de deplacement associe"	"INTRINSEQUE"	111110
+"MvtLevage.dysf.ButeePositive"	"WARNING"	"MvtLevage : actionneur en butee dans un des 2 sens (positif)"	"Verifier la commande de position associee"	"INTRINSEQUE"	001110
+"MvtLevage.dysf.ButeeNegative"	"WARNING"	"MvtLevage : actionneur en butee dans un des 2 sens (negatif)"	"Verifier la commande de position associee"	"INTRINSEQUE"	001110
+"MvtLevage.dysf.Disjonction"	"FAUTE"	"MvtLevage:Temps maximum pour effectuer le mouvement ecoule"	"Verifier le fonctionnement des capteurs de butee"	"INTRINSEQUE"	111110
+"MvtLevage.dysf.AutocontroleButee"	"FAUTE"	"Erreur lors de l'autocontrole des butees"	"Verifier le fonctionnement des capteurs de butee"	"INTRINSEQUE"	111110
+"MvtLevage.dysf.TablierDeleste"	"FAUTE"	"Capteur tablier deleste actionne"	"Verifier le fonctionnement du capteur tablier deleste"	"CHARGE"	111110
+"OutilGF.dysf.etat.videCharge"	"FAUTE"	"OutilGF: Erreur etat occupation outil de transfert"	"Verifier l'etat des  capteurs de presence charge transportee"	"CHARGE"	111110
+"OutilGF.dysf.etat.stabilite"	"FAUTE"	"OutilGF:Outil de stabilisation de la charge transportee mal positionne"	"Verifier l'etat de l'outil qui maintient la charge transportee"	"INTRINSEQUE"	111110
+"OutilGFPosition"	"FAUTE"	"Absence detection cellule de position de l'AGV"	"Verifier le fonctionnement de la cellule et la position de l'AGV"	"INTRINSEQUE"	111110
+"OutilGFCoherenceChargeDestination"	"FAUTE"	"La charge ne correspond pas a l'emplacement de destination."	"Verifier la mission et initialiser l'AGV."	"CHARGE"	111100
+"Outil.dysf.CoherencePressostat"	"FAUTE"	"Detection de poids avec pressostat alors que l'AGV est vide"	"Controler le reglage du pressostat"	"INTRINSEQUE"	111110
+"Outil.dysf.PressostatPoidsSPV"	"FAUTE"	"Le poids mesure de la charge transportee est incoherent avec les informations de la supervision"	"Controler le reglage du pressostat et les donnees envoyees par la supervision"	"CHARGE"	111110
+"Outil.dysf.PressostatSurCharge"	"FAUTE"	"Le poids mesure de la charge transportee est non conforme : surcharge"	"Controler le reglage du pressostat et la charge"	"CHARGE"	111110
+"dysf.PlanchePalette"	"FAUTE"	"Hauteur planche detectee trop faible"	"Verifier la taille de palette a prendre, le fonctionnement des capteur situes en bout de l'outil de levage"	"CHARGE"	101110
+"dysf.TunnelPaletteVide"	"FAUTE"	"Hauteur tunnel detectee trop faible"	"Verifier le type de palette a prendre, le fonctionnement des capteur situes en bout de l'outil de levage"	"CHARGE"	101110
+"dysf.DetectionTunnel"	"FAUTE"	"Defaut detection tunnel: Hauteur trop importante"	"Verifier le type de palette a prendre, le fonctionnement des capteur situes en bout de l'outil de levage"	"INTRINSEQUE"	101110
+"dysf.DetectionPvBas"	"FAUTE"	"Detection cellule fourche et levage en position basse"	"Verifier la position du levage ainsi que le fonctionnement des capteur situes en bout de l'outil de levage"	"CHARGE"	101110
+"dysf.CapteursFourches"	"FAUTE"	"Defaut detection capteurs bout de l'outil de transfert"	"Verifier le fonctionnement des capteurs situes en bout de l'outil de levage)"	"INTRINSEQUE"	101110
+"prisePaletteVide"	"WARNING"	"Recherche palette a prendre"	""	"INTRINSEQUE"	100000
+"LevageMng.Accostage.dysf"	"FAUTE"	"Outil de levage pas a la bonne hauteur pour l'accostage de la base"	"Verifier le bon fonctionnement du levage"	"TRAJET"	100010
+"LevageMng.Degagement.dysf"	"FAUTE"	"Outil de levage pas a la bonne hauteur pour le degagement de la base"	"Verifier le bon fonctionnement du levage"	"TRAJET"	100010
+"DepilageSequence"	"FAUTE"	"Depilage impossible dans rack de type driveIn"	"Verifier la configuration du circuit (distance supplementaire engagement base) "	"TRAJET"	111100
+"OutilGF.AutomatePrise.Dysf.Vacuite"	"FAUTE"	"Defaut presence palette pour  transfert"	"Verifier l'etat de la base de transfert"	"INTERFACE"	001100
+"OutilGF.AutomatePrise.dysf.gerbage"	"PANNE"	"Pas de liberation de la charge transportee en gerbage"	"Verifier le pressostat de levage ou le capteur de sur-fourche"	"CHARGE"	111110
+"OutilGF.AutomatePrise.dysf.dimension.Charge"	"PANNE"	"Dimension incoherente de la charge a transporter"	"Verifier le fonctionnement du capteur de mesure"	"CHARGE"	111100
+"OutilGF.AutomateDepose.Dysf.Vacuite"	"FAUTE"	"Defaut presence palette pour  transfert"	"Verifier l'etat de la base de transfert"	"INTERFACE"	001100
+"OutilGF.AutomateDepose.dysf.gerbage"	"PANNE"	"Pas de liberation de la charge transportee en gerbage"	"Verifier le pressostat de levage ou le capteur de sur-fourche"	"CHARGE"	111110
+"OutilGF.AutomateDepose.dysf.dimension.Charge"	"PANNE"	"Dimension incoherente de la charge a transporter"	"Verifier le fonctionnement du capteur de mesure"	"CHARGE"	111100
+"Enviroscan"	"WARNING"	"Scan de la charge en cours"	""	"INTRINSEQUE"	100000
+"Outil.dysf.CommandeDescenteLevage"	"FAUTE"	"Commande de la descente de l'outil de levage impossible: verin de l'enviroscan non rentre"	"Remonter ou initialiser l'outil de levage puis rentrer le verin"	"INTRINSEQUE"	101110
+"dysf.etat.enviroscan"	"FAUTE"	"Defaut logiciel enviroscan : demande de scan refusee"	"initialiser l'agv"	"INTRINSEQUE"	111110
+"dysf.inclinaison.enviroscan"	"FAUTE"	"Le support de depose scanne est trop inclinee, impossible de gerber"	"Rectifier le support de depose ou la position de l'enviroscan, puis initialiser l'AGV"	"INTRINSEQUE"	101110
+"ComputingErrorX.enviroscan"	"FAUTE"	"enviroscan : gabarit de l'emplacement de transfert impossible a localiser (erreur longitudinale)"	"Verifier la position de l'AGV et de la base de transfert, puis re-armer le defaut"	"INTRINSEQUE"	101110
+"BadResultX.enviroscan"	"FAUTE"	"enviroscan : qualite de mesure insuffisante (erreur longitudinale)"	"Verifier la position de l'AGV et de la base de transfert, puis re-armer le defaut"	"INTRINSEQUE"	101110
+"ComputingErrorY.enviroscan"	"FAUTE"	"enviroscan : gabarit de l'emplacement de transfert impossible a localiser (erreur laterale)"	"Verifier la position de l'AGV et de la base de transfert, puis re-armer le defaut"	"INTRINSEQUE"	101110
+"BadResultY.enviroscan"	"FAUTE"	"enviroscan : qualite de mesure insuffisante (erreur laterale)"	"Verifier la position de l'AGV et de la base de transfert, puis re-armer le defaut"	"INTRINSEQUE"	101110
+"ComputingErrorZ.enviroscan"	"FAUTE"	"enviroscan : gabarit de l'emplacement de transfert impossible a localiser (deltaZ)"	"Verifier la position de l'AGV et de la base de transfert, puis re-armer le defaut"	"INTRINSEQUE"	101110
+"BadResultZ.enviroscan"	"FAUTE"	"enviroscan : qualite de mesure insuffisante (deltaZ)"	"Verifier la position de l'AGV et de la base de transfert, puis re-armer le defaut"	"INTRINSEQUE"	101110
+"BadResultErrorPhiX"	"FAUTE"	"enviroscan : qualite de mesure insuffisante (phiX)"	"Verifier la position de l'AGV et de la base de transfert, puis re-armer le defaut"	"INTRINSEQUE"	101110
+"ComputingErrorPhiX"	"FAUTE"	"enviroscan : gabarit de l'emplacement de transfert impossible a localiser (phiX)"	"Verifier la position de l'AGV et de la base de transfert, puis re-armer le defaut"	"INTRINSEQUE"	101110
+"BadResultErrorPhiY"	"FAUTE"	"enviroscan : qualite de mesure insuffisante (PhiY)"	"Verifier la position de l'AGV et de la base de transfert, puis re-armer le defaut"	"INTRINSEQUE"	101110
+"ComputingErrorPhiY"	"FAUTE"	"enviroscan : qualite de mesure insuffisante (phiY)"	"Verifier la position de l'AGV et de la base de transfert, puis re-armer le defaut"	"INTRINSEQUE"	101110
+"BadResultErrorPhiZ"	"FAUTE"	"enviroscan : gabarit de l'emplacement de transfert impossible a localiser (PhiZ)"	"Verifier la position de l'AGV et de la base de transfert, puis re-armer le defaut"	"INTRINSEQUE"	101110
+"ComputingErrorPhiZ"	"FAUTE"	"enviroscan : qualite de mesure insuffisante  (PhiZ)"	"Verifier la position de l'AGV et de la base de transfert, puis re-armer le defaut"	"INTRINSEQUE"	101110
+"BadResultVacuity.enviroscan"	"FAUTE"	"qualite de mesure insuffisante pour la verification de la vacuite de l'emplacement de transfert"	"Verifier la position de l'AGV et de la base de transfert, puis re-armer le defaut"	"INTRINSEQUE"	101110
+"ComputingErrorVacuity.enviroscan"	"FAUTE"	"erreur logiciel enviroscan lors du controle vacuite"	"initialiser l'agv"	"INTRINSEQUE"	101110
+"ErrorVacuity.enviroscan"	"FAUTE"	"Enviroscan : defaut vacuite de l'emplacement de transfert"	"Verifier l'etat de l'emplacement de transfert, ainsi que le fonctionnement de l'enviroscan "	"INTERFACE"	101110
+"HauteurCharge.enviroscan"	"FAUTE"	"Depose avec enviroscan : hauteur charge inconnue"	"initialiser l'agv"	"CHARGE"	100100
+"TimeOut.enviroscan"	"FAUTE"	"Resultat enviroscan non disponible"	"initialiser l'agv"	"INTRINSEQUE"	100100
+"Tentative.enviroscan"	"FAUTE"	"Enviroscan : nombre max de tentatives de scan atteint"	"initialiser l'agv"	"INTRINSEQUE"	101100
+"Config.enviroscan"	"FAUTE"	"Enviroscan : erreur configuration hauteur supplementaire pour transfert"	"initialiser l'agv"	"INTRINSEQUE"	100100
+"Outil.dysf.incoherenceTablier"	"FAUTE"	"Charge a transferer scannee decalee : prise impossible"	"Repositionner la charge a transferer puis initialiser l'AGV"	"INTRINSEQUE"	111110
+"Dysf.enviroscan.depose"	"FAUTE"	"Enviroscan : tablier pas en position centre ou verin enviroscan pas en position sortie"	"Verifier la position du tablier et celle du verin puis rearmer le defaut"	"INTRINSEQUE"	101110
+"Outil.dysf.SortieScanner"	"FAUTE"	"Commande sortie verin enviroscan impossible : position de l'outil de levage trop basse"	"Verifier la position de l'outil de levage"	"INTRINSEQUE"	101110
+"dysf.ChargeMauvaiseLargeur"	"ERREUR"	"Largeur de la charge detectee incorrecte"	"Verifier la charges detectee par l'enviroscan"	"INTERFACE"	111110
+"LiberationSurfourchesAsynchrone"	"FAUTE"	"Liberation des capteurs sur-fourches pas synchronisee"	"Verifier que la charge n'est pas de travers et verifier les capteurs sur-fourche"	"CHARGE"	111110
+"GerbageImpossibleACauseSurfourche"	"FAUTE"	"Mission de depose avec gerbage impossible car surfourche pas actionne ou pas present"	"Verifier le(s) capteur(s) sur-fourche"	"CHARGE"	111110
+"Travail.dysf.absencePalette"	"FAUTE"	"Absence detection charge a transferer"	"Verifier l'emplacement de transfert et les capteurs de detection"	"CHARGE"	111110
+"Travail.dysf.presencePalette"	"FAUTE"	"Detection de la charge a transferer trop tot"	"Verifier la position de la charge a transferer et le fonctionnement des capteurs de detection"	"CHARGE"	111110
+"Travail.dysf.SecuriteVacuite"	"FAUTE"	"Etat capteur(s) de vacuite de l'emplacement de transfert incorrect(s)"	"Verifier l'etat des capteurs de vacuite de l'emplacement de transfert"	"CHARGE"	111110
+"dysf.Degagement.EtatAgv"	"FAUTE"	"Erreur etat capteur presence charge transportee pendant le degagement de l'emplacement de transfert"	"Verifier les capteurs de presence charge transportee"	"CHARGE"	111110
+"dysf.Accostage.Distance"	"FAUTE"	"AGV au dela du troncon de guidage: transfert impossible"	"Verifier les capteurs de reperage (codeur/LASER)"	"TRAJET"	111110
+"dysf.CoherenceHauteurPlsArriere"	"PANNE"	"Hauteur du scrutateur de securite arriere incompatible avec la hauteur de l'outil de levage en trajet"	"Verifier la hauteur du scrutateur de securite arriere et la hauteur de l'outil de levage en trajet)"	"CHARGE"	111110
+"dysf.BoutFourche"	"FAUTE"	"Detection securite situee en bout de l'outil "	"Verifier le fonctionnement des tamponettes situees en bout de l'outil)"	"CHARGE"	111110
+"dysf.HauteurMaxTrj"	"FAUTE"	"Hauteur de l'outil de levage trop importante en trajet: attente descente"	"Verifier la vitesse de descente de l'outil de levage"	"INTRINSEQUE"	101110
+"Outil.dysf.SurFourcheDroite"	"FAUTE"	"Defaut etat capteur presence du sur-fourche droite"	"Verifier le fonctionnement du capteur presence sur-fourche droite"	"INTRINSEQUE"	111110
+"Outil.dysf.SurFourcheGauche"	"FAUTE"	"Defaut etat capteur presence sur-fourche gauche"	"Verifier le fonctionnement du capteur presence sur-fourche gauche"	"INTRINSEQUE"	111110
+"Outil.dysf.VisionChargeDroite"	"FAUTE"	"Defaut etat capteur vision de droite de la charge a transferer"	"Verifier le fonctionnement du capteur vision de droite de la charge a transferer"	"CHARGE"	111110
+"Outil.dysf.VisionChargeGauche"	"FAUTE"	"Defaut etat capteur vision de gauche de la charge a transferer"	"Verifier le fonctionnement du capteur vision de gauche de la charge a transferer"	"CHARGE"	111110
+"Outil.dysf.CoherenceTablier"	"FAUTE"	"Defaut coherence capteurs presence tablier"	"Verifier le fonctionnement des deux capteurs de presence tablier"	"INTRINSEQUE"	111110
+"Outil.dysf.LevageTaquage"	"WARNING"	"Outil de levage pas en position pour taquer la charge a deposer"	"Verifier la position de l'outil de levage, ainsi que le fonctionnement du codeur"	"INTERFACE"	100010
+"CoherenceCapteursPresenceCharge"	"FAUTE"	"Defaut coherence entre les capteurs de detection de la charge transportee"	"Verifier les capteurs associes a la detection de la charge transportee"	"INTRINSEQUE"	111110
+"dysf.ControlePousseeCharge"	"FAUTE"	"L'outil de transfert poussent la charge"	"Verifier la position du levage,la position de la charge, ainsi que le fonctionnement du capteur"	"INTRINSEQUE"	111110
+"dysf.ControleCoherencePousseeCharge"	"FAUTE"	"Le controle coherence du capteur de controle poussee charge a echoue"	"Verifier le fonctionnement du capteur"	"INTRINSEQUE"	111110
+"dysf.DysfSurIntensiteAccostage"	"FAUTE"	"Surintensite traction lors de l'accostage"	"Verifier que l'AGV n'est pas bloque mecaniquement"	"CHARGE"	111110
+"OutilGF.Dysf.AutoswapAgvCharge"	"FAUTE"	"Sortie de la batterie alors que l'AGV transporte une charge."	"Decharger l'AGV avant de faire le changement de batterie"	"CHARGE"	111110
+"dysf.VacuiteTunnels"	"FAUTE"	"Defaut vacuite tunnels lors de l'engagement"	"Verifier l'etat des cellules en bout de l'outil, puis rearmer"	"CHARGE"	111110
+"dysf.AbsenceDetectionPresenceCharge"	"FAUTE"	"L'AGV n'a pas detecte la charge a prendre"	"Verifier l'etat du detecteur de presence charge, puis rearmer"	"CHARGE"	111110
+"RchEmplacement.PrisePasDeDetection"	"FAUTE"	"L'AGV n'a detecte aucune charge a prendre"	"Mettre une charge, reculer l'AGV et rearmer"	"CHARGE"	111110
+"RchEmplacement.PriseDetectionHorsZone"	"FAUTE"	"L'AGV a detecte une charge a prendre au dela de la zone autorisee"	"Mettre une charge, reculer l'AGV et rearmer"	"CHARGE"	111110
+"RchEmplacement.DeposeObstaclePremierEmplacement"	"FAUTE"	"L'AGV a detecte un obstacle devant le premier emplacement de depose"	"Retirer l'obstacle, reculer l'AGV et rearmer"	"CHARGE"	111110
+"RchEmplacement.Obstacle"	"FAUTE"	"L'AGV a detecte un obstacle different d'une charge"	"Retirer l'obstacle, rearmer puis reculer l'AGV si necessaire"	"CHARGE"	111110
+"RchEmplacement.DeposeAvantPremierEmpl"	"FAUTE"	"L'AGV a detecte un emplacement trop petit pour deposer la charge"	"Deplacer la charge actuellement sur l'emplacement, et rearmer. Reculer l'AGV si necessaire"	"CHARGE"	111110
+"RchEmplacement.CapTropImportant"	"FAUTE"	"Cap AGV trop important ou sur segment courbe, scan interdit"	"Verifier la position de l'AGV ainsi que l'environnement"	"INTRINSEQUE"	111100
+"RchEmplacement.DernierScanTropAncien"	"FAUTE"	"Pas de scan pendant trop longtemps"	"Distance autorisee sans scan depassee, verifier la configuration de l'AGV : parametrage enviroscan, vitesse agv"	"INTERFACE"	111110
+"RchEmplacement.ChargeTropPret"	"FAUTE"	"Detection de charge trop pret : il aurait deja fallu deposer/prendre la charge"	"Eloigner la charge detectee et rearmer"	"CHARGE"	111110
+"RchEmplacement.EngagementTropTard"	"FAUTE"	"Engagement emplacement effectue trop tard, il aurait deja fallu lever/baisser l'outil de levage"	"Eloigner la charge detectee et rearmer"	"INTERFACE"	111110
+"RchEmplacement.DeltaEntreDeuxMesures"	"FAUTE"	"Difference de position de charge trop importante entre 2 mesures"	"Verifier la position des charges detectees par l'enviroscan"	"INTERFACE"	111110
+"Dysf.Secu.CodeurS3000"	"PANNE"	"Defaut codeur S300(0) non connecte"	"Verifier les codeurs du(des) S300(0)"	"INTRINSEQUE"	111100
+"Dysf.Secu.S3000"	"ERREUR"	"Arret sur detection S300(0)"	"Retirer l'obstacle devant l'AGV"	"TRAJET"	111100
+"Dysf.Secu.Bouclier_S3000_Arme"	"ERREUR"	"Defaut etat capteurs de la chaine de securite"	"Controler la coherence de ces capteurs"	"TRAJET"	111100
+"Dysf.Bouclier1"	"ERREUR"	"Defaut Securite : variateur traction en defaut"	"Verifier le variateur de traction"	"INTRINSEQUE"	111100
+"Dysf.Bouclier2"	"FAUTE"	"Arret sur detection bordure sensible"	"Retirer l'obstacle des bordures sensibles"	"TRAJET"	111110
+"Dysf.Bouclier3"	"FAUTE"	"Arret sur detection bordure sensible (chaine numero 2) "	"Retirer l'obstacle des bordures sensibles"	"TRAJET"	111110
+"Dysf.Bouclier4"	"ERREUR"	"Arret sur detection scrutateur de securite S300(0) ou bouclier"	"Retirer l'obstacle devant l'agv"	"TRAJET"	111110
+"Dysf.Bouclier5"	"ERREUR"	"Arret sur detection scrutateur de securite S300(0) (chaine numero 2)"	"Retirer l'obstacle devant l'agv"	"TRAJET"	111110
+"Dysf.RedondanceBouclier"	"PANNE"	"Erreur de redondance sur une des chaines de securite bouclier ou scrutateur de securite S300(0)"	"Verifier les informations des chaines de securite bouclier ou scrutateur de securite S300(0)"	"INTRINSEQUE"	111110
+"Dysf.Secu.ArretUrgence"	"FAUTE"	"Arret urgence enclenche"	"Verifier l'etat des arrets d'urgence"	"INTRINSEQUE"	111100
+"Dysf.Secu.SafetyeEmergency"	"PANNE"	"Erreur de redondance sur la chaine d'arret d'urgence"	"Verifier les informations de la chaine d'arret d'urgence"	"INTRINSEQUE"	111100
+"Dysf.Secu.BatterieDechargee"	"WARNING"	"Batterie dechargee"	"Mettre l'AGV en charge batterie"	"INTRINSEQUE"	001100
+"Dysf.Secu.PresenceBatterie"	"WARNING"	"Verrou batterie non enclenchee"	"Verifier etat du verrou de batterie"	"INTRINSEQUE"	111100
+"Dysf.Secu.AlimeExterne"	"WARNING"	"Detection alimentation externe"	"Debrancher l'alimentation externe"	"INTRINSEQUE"	111110
+"Dysf.AlimentationSauvegardeHs"	"WARNING"	"RISQUE DE COUPURE DE L'AGV LORS DU CHANGEMENT DE BATTERIE: Alimentation auxiliaire hors-service"	"Verifier/changer l'alimentation auxiliaire"	"TRAJET"	000100
+"Dysf.AlimentationSauvegardeDechargee"	"WARNING"	"RISQUE DE COUPURE DE L'AGV LORS DU CHANGEMENT DE BATTERIE: Alimentation auxiliaire dechargee"	"Verifier l'alimentation auxiliaire"	"TRAJET"	000100
+"Dysf.Secu.ConnexionBatterie"	"PANNE"	"Connexion batterie mal enclenchee"	"Verifier le contact de pre-coupure de la connexion batterie"	"INTRINSEQUE"	111110
+"Dysf.Secu.BatterieAuxiliaire"	"WARNING"	"etat relai alimentation auxiliaire incorrect"	"Verifier le relai de commande associe"	"INTRINSEQUE"	001110
+"Dysf.LateraleGauche"	"FAUTE"	"Detection bordure/cellule laterale gauche activee"	"Verifier le capteur associe"	"TRAJET"	111110
+"Dysf.LateraleDroit"	"FAUTE"	"Detection bordure/cellule laterale droite activee"	"Verifier le capteur associe"	"TRAJET"	111110
+"Dysf.Secu.Laterale"	"FAUTE"	"Securite bordure/cellule laterale actionnee"	"Verifier le capteur associe"	"TRAJET"	111110
+"Dysf.RideauFrontalAvant"	"ERREUR"	"Detection rideau frontal avant "	"Retirer l'obsctacle a l'avant"	"TRAJET"	111110
+"Dysf.RideauFrontalArriere"	"ERREUR"	"Detection rideau frontal arriere "	"Retirer l'obsctacle a l'arriere"	"TRAJET"	111110
+"DysfAgv"	"FAUTE"	"Defaut AGV"	"Voir cause dans les logs, puis refaire une INITIALISATION."	"INTRINSEQUE"	111100
+"DysfModeAutomatique"	"FAUTE"	"Defaut mode automatique de l'AGV"	"Voir cause dans les logs, puis faire un RESET GLOBAL."	"INTRINSEQUE"	111100
+"Dysf.Secu.HorsGabarit"	"ERREUR"	"Cellule(s) hors-gabarit occultee(s)"	"Verifier l'etat des cellules hors-gabarit"	"CHARGE"	111100
+"Dysf.Secu.ArretAgvADistance"	"WARNING"	"Arret AGV a distance"	"Relancer l'AGV sur Operating Screens"	"TRAJET"	111100
+"Dysf.DetectionFumee"	"WARNING"	"Detection fumee"	"Verifier le fonctionnement du capteur associe"	"TRAJET"	001110
+"Dysf.DetectionHs"	"WARNING"	"Detecteur de fumee hors-service"	"Verifier, remplacer le capteur associe "	"TRAJET"	001110
+"Dysf.DefautDetecteur"	"WARNING"	"Defaut detecteur de fumee"	"Verifier, remplacer le capteur associe"	"TRAJET"	001110
+"Dysf.DefautPnoz"	"PANNE"	"Defaut general PNOZ : le module n'est pas en mode Run"	"Verifier le cablage associe,ainsi que le fonctionnement du PNOZ "	"INTRINSEQUE"	101110
+"Dysf.DefautPnozKmReleased"	"PANNE"	"Defaut PNOZ : auto-controle des relais KO"	"Se referer a la documentation PNOZ pour le diagnostique."	"INTRINSEQUE"	101110
+"Dysf.PuissanceAuto"	"FAUTE"	"L'AGV est en mode Auto et n'a pas de puissance."	"Appuyer sur le bouton START de l'AGV"	"INTRINSEQUE"	111100
+"NavManuel.dysf.Carrefour"	"ERREUR"	"RISQUE DE COLLISION ENTRE AGV"	"Proteger la zone autour de l'AGV"	"TRAJET"	111100
+"DysfRedemarrageSecurite"	"WARNING"	"Arret securite : redemarrage de l'AGV dans 2 secondes"	"Attente delai pour redemarrage apres arret"	"INTRINSEQUE"	111110
+"DysfAttenteArretFinalDirection"	"WARNING"	"Attente arret final de la direction"	"Attente arret final de la direction"	"INTRINSEQUE"	001000
+"Rearmement"	"WARNING"	"Rearmement AGV"	""	"INTRINSEQUE"	000100
+"Dysf.ChgBatt.ctrlDebut"	"FAUTE"	"Systeme changement batterie emet avant la demande de l'AGV"	"Recycler le systeme de changement de batterie"	"INTERFACE"	111110
+"Dysf.ChgBatt.acqDebut"	"FAUTE"	"Systeme changement batterie ne reponds pas a la demande de l'AGV"	"Verifier le fonctionnement du systeme de changement de batterie"	"INTERFACE"	111110
+"Dysf.ChgBatt.acqDepart"	"FAUTE"	"Systeme changement batterie ne reponds pas a la validation"	"Verifier le fonctionnement du systeme de changement de batterie"	"INTERFACE"	111110
+"Dysf.ChgBatt.navetteDefaut"	"FAUTE"	"Systeme changement batterie en defaut"	"Verifier le fonctionnement du systeme de changement de batterie"	"INTERFACE"	111110
+"Dysf.ChgBatt.navetteHorsService"	"FAUTE"	"Systeme changement batterie hors service"	"Verifier le fonctionnement du systeme de changement de batterie"	"INTERFACE"	111110
+"Dysf.ChgBatt.acqFinir"	"FAUTE"	"Systeme changement batterie n'aquitte pas la demande de fin de l'AGV"	"Verifier le fonctionnement du systeme de changement de batterie"	"INTERFACE"	111110
+"Dysf.ChgBatt.timeOut"	"FAUTE"	"Temps maximum aloue pour le changement de batterie depasse"	"Verifier le fonctionnement du systeme de changement de batterie"	"INTERFACE"	111110
+"Dysf.Anticipation.DistRecul"	"FAUTE"	"Erreur distance de recul/distance restante"	"Resoudre le probleme de configuration de la base de transfert"	"TRAJET"	111110
+"dysf.Anticipation.Outil.nonPos"	"FAUTE"	"Outil de transfert non positionne en fin d'anticipation"	"Verifier le bon fonctionnement de l'outil de transfert"	"TRAJET"	100010
+"Dysf.Anticipation.HauteurTrf"	"FAUTE"	"Erreur sequence : hauteur de transfert negative"	"Verifier la sequence transmise"	"TRAJET"	111100
+"Dysf.Anticipation.Action"	"FAUTE"	"Action incompatible avec etat AGV (vide/charge)"	"Verifier la sequence transmise"	"TRAJET"	111100
+"Dysf.Anticipation.PresencePalette"	"ERREUR"	"Detection charge transportee pendant l'anticipation"	"Verifier l'etat des capteurs de presence charge transportee"	"CHARGE"	111110
+"dysf.LimitationHauteurLevage"	"FAUTE"	"L'outil de levage est trop haut, alors que la hauteur est limitee"	"Attendre le positionnement ou verifier la hauteur de l'outil de levage."	"INTRINSEQUE"	101110
+"Dysf.SecuritePls"	"ERREUR"	"Detection scrutateur de Securite S300(0) Arriere avant l'accostage"	"Verifier la chaine de securite arriere"	"TRAJET"	111110
+"Dysf.RedemarrageApresDisparitionDetectionSecurite"	"WARNING"	"Redemarrage de l'AGV dans 2 secondes"	"Attente delai pour redemarrage apres arret"	"TRAJET"	111000
+"Dysf.ScrutateurArriereMasque"	"FAUTE"	"Scrutateur arriere masque"	"Verifier que le Scrutateur Arriere n'est pas masque par l'outil"	"TRAJET"	101100
+"NavManuel.dysf.orientationTourelles"	"ERREUR"	"Orientation des tourelles incoherentes entre-elles"	"Rectifier leur orientation"	"INTRINSEQUE"	111010
+"NavManuel.dysf.ModeSemi"	"FAUTE"	"Pilotage en mode semi-auto impossible"	"Positionner l'AGV sur un troncon de guidage et verifier son reperage"	"INTRINSEQUE"	101010
+"NavLaser.gabarit.warning"	"WARNING"	"AGV decale de sa trajectoire : ralenti"	"Verifier l'etalonnage de l'AGV (traction/direction/capteur Laser"	"TRAJET"	000000
+"NavLaser.gabarit.erreur"	"FAUTE"	"AGV decale de sa trajectoire : arret"	"Verifier l'etalonnage de l'AGV (traction/direction/capteur Laser"	"TRAJET"	111110
+"NavLaser.gabarit.init"	"FAUTE"	"AGV mal positionne sur la base d'initialisation"	"Repositionner correctement l'AGV"	"TRAJET"	111110
+"NavLaser.deadlock.anticonflit"	"WARNING"	"Autoblocage carrefour"	"Initialiser l'AGV."	"TRAJET"	001100
+"DysfAgvTropBouge"	"WARNING"	"L'AGV est trop recule/avance"	"Repositionner l'AGV sur sa derniere position automatique ou l'initialiser"	"TRAJET"	001100
+"CoherenceConsigneDirAv.Dysf"	"FAUTE"	"Defaut de coherence entre mesure codeur et consigne de direction avant"	"Verifier les codeurs et/ou consigne de direction avant"	"INTRINSEQUE"	101100
+"CoherenceConsigneDirAr.Dysf"	"FAUTE"	"Defaut de coherence entre mesure codeur et consigne de direction arriere"	"Verifier les codeurs et/ou consigne de direction arriere"	"INTRINSEQUE"	101100
+"CoherenceConsigneDirAv.Warning"	"WARNING"	"l' AGV ralentit a cause d'une difference importante entre mesure codeur et consigne de direction avant"	"Verifier les codeurs et/ou consigne de direction avant"	"INTRINSEQUE"	001100
+"CoherenceConsigneDirAr.Warning"	"WARNING"	"l' AGV ralentit a cause d'une difference importante entre mesure codeur et consigne de direction arriere"	"Verifier les codeurs et/ou consigne de direction arriere"	"INTRINSEQUE"	001100
+"dysf.etalonHydrau.config"	"PANNE"	"EtalonHydrau: Erreur sur la configuration d'EtalonHydrau"	"Ouvrir les logs pour connaitre la nature de l'erreur"	"INTRINSEQUE"	111100
+"dysf.etalonHydrau.configMvt"	"PANNE"	"EtalonHydrau: Erreur sur la configuration d'EtalonHydrau"	"Verifier donnee MvtAssocie dans configAgv.conf (plus d'info dans les logs)"	"INTRINSEQUE"	111100
+"dysf.etalonHydrau.configSens"	"PANNE"	"EtalonHydrau: Erreur sur la configuration d'EtalonHydrau"	"Verifier donnee Sens dans configAgv.conf (valeurs autorisees: 0, 1 ou 2)"	"INTRINSEQUE"	111100
+"dysf.etalonHydrau.tempoDepassee"	"FAUTE"	"EtalonHydrau: Execution trop longue d'EtalonHydrau > 5 minutes"	"Verifier la configuration d'EtalonHydrau, de DispatcherHydraulique et du mouvement associe"	"INTRINSEQUE"	111110
+"dysf.etalonHydrau.tempoDepasseeEtatStart"	"FAUTE"	"EtalonHydrau: Execution trop longue de l'etat start > 20s"	"Causes: gain ou/et position demandee incorrectes"	"INTRINSEQUE"	111110
+"Sequenceur.Dysf.codeTrf"	"FAUTE"	"Action incompatible avec l'etat (vide/plein) de l'AGV."	"Reinitialiser l'AGV"	"INTRINSEQUE"	001110
+"Sequenceur.Dysf.GabaritPoste"	"FAUTE"	"Erreur positionnement sur le poste de transfert"	"Verifier la position de l'AGV"	"TRAJET"	111100
+"Sequenceur.Dysf.Circuit"	"PANNE"	"Le fichier circuit est introuvable ou incorrect"	"Telecharger le fichier circuit dans l'AGV"	"INTRINSEQUE"	111100
+"Sequenceur.Dysf.FauxTrf"	"WARNING"	"Suite a a defaut bloquant, le transfert a ete annule"	"Attente d'une mission de reroutement"	"CHARGE"	001110
+"Sequenceur.Init"	"WARNING"	"Numero d'initialisation invalide"	"Refaire une initialisation."	"INTRINSEQUE"	001100
+"dysf.HorsServiceSpv"	"FAUTE"	"AGV mis hors service par System Manager"	"Redemarrer l'AGV ou faire un reset global"	"INTRINSEQUE"	111100
+"dysf.HorsCircuit"	"FAUTE"	"AGV hors circuit"	"Mettre l'AGV en circuit"	"INTRINSEQUE"	111000
+"SeqSimul.dysf.erreurFichier"	"ERREUR"	"Erreur(s) fichier(s) de simulation"	"Voir fichier de log"	"INTRINSEQUE"	000000
+"SeqSimul.dysf.erreurInit"	"ERREUR"	"Aucun fichier de simulation sur ce point d'initialisation"	"Initialiser l'AGV ailleurs"	"INTRINSEQUE"	000000
+"SeqSimul.dysf.choixBaseAutoswap"	"ERREUR"	"La base ou se trouve la batterie est erronee."	"Refaire un init et repondre Oui a l'une des 2 questions"	"INTRINSEQUE"	000000
+#fin liste  dysfonctionnements

@@ -1,0 +1,10 @@
+<RCC>
+  <qresource prefix="image">
+    <file>image/config.svg</file>
+    <file>image/eject.svg</file>
+    <file>image/forward.svg</file>
+    <file>image/pause.svg</file>
+    <file>image/play.svg</file>
+    <file>image/rewind.svg</file>
+  </qresource>
+</RCC>
